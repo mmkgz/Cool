@@ -1,1 +1,2 @@
-<iframe id="a"></iframe><script>document.querySelector("#a").src=new URLSearchParams(location.search).get("url")</script>
+<iframe id="a"style="position:absolute;left:0;right:0;top:0;bottom:0"></iframe><title id='b'></title>
+<script>document.querySelector("#a").src=new URLSearchParams(location.search).get("url");document.querySelector("#b").textContent="Emulating "+document.querySelector("#a").src;</script>
