@@ -17,10 +17,13 @@
         a.src=c.get("url").replaceAll("$","game");
         
         b.textContent="Emulating "+a.src;
+        if(localStorage.getItem("1")!=a.src){
+            
         localStorage.setItem("1",a.src);
         localStorage.setItem("2",localStorage.getItem("1"));
         localStorage.setItem("3",localStorage.getItem("2"));
         console.log("set most recent game to "+a.src);
+        }
     }
     else
     {
