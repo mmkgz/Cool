@@ -18,10 +18,11 @@
         
         b.textContent="Emulating "+a.src;
         if(localStorage.getItem("1")!=a.src||localStorage.getItem("1")!=a.src.replace("$","game")){
-            
-        localStorage.setItem("1",a.src);
-        localStorage.setItem("2",localStorage.getItem("1"));
-        localStorage.setItem("3",localStorage.getItem("2"));
+            localStorage.setItem("3",localStorage.getItem("2"));
+            localStorage.setItem("2",localStorage.getItem("1"));
+        localStorage.setItem("1",a.src.replace("$","game"));
+        
+        
         console.log("set most recent game to "+a.src);
         }
     }
