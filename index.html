@@ -2,19 +2,23 @@
 
 
 <p id="d"style='visibility:none'>In order to unblock a site, make the link in this format - (mmkgz.github.io/Cool?url="Type URL here")<br>Make sure that in order to avoid any GoGuardian blocks, replace the word 'game' with '$'. e.g "https://mmkgz.github.io/Unblock/?url=https://dedra$s.com/$s/ovo/redirect.html" for "https://mmkgz.github.io/Unblock/?url=https://dedragames.com/games/ovo/redirect.html."<br>Disclaimer: May not work with every single site.</p>
-<button id="e"style="width:65%;height:15%;visibility:none"></button>
+<button id="e"style="width:65%;height:15%;visibility:none"></button><button id="f"style="width:65%;height:15%;visibility:none"></button><button id="g"style="width:65%;height:15%;visibility:none"></button>
 <script>
     
     var a=document.querySelector("#a");
     var b=document.querySelector("#b");
     var c=new URLSearchParams(location.search);
     var e=document.querySelector("#e");
+    var f=document.querySelector("#f");
+    var g=document.querySelector("#g");
     if(c.has("url"))
     {
         a.src=c.get("url").replaceAll("$","game");
         
         b.textContent="Emulating "+a.src;
         localStorage.setItem("1",a.src);
+        localStorage.setItem("2",localStorage.getItem("1"));
+        localStorage.setItem("3",localStorage.getItem("2"));
         console.log("set most recent game to "+a.src);
     }
     else
@@ -24,15 +28,37 @@
         document.querySelector("#d").style.visibility="visible";
         e.style.visibility="visible";
          var one=localStorage.getItem("1");
+        var two=localStorage.getItem("2");
+        var three=localStorage.getItem("3");
         if(one!=null)
         {
         e.textContent="Most Recent Game: "+one; 
-            e.onclick=()=>{window.open("mmkgz.github.io/Cool?url="+one,"_blank");
+            e.onclick=()=>{window.open(one,"_blank");
                           };
         }
         else
         {
             e.textContent="Most Recent Game: None";
+        }
+        if(two!=null)
+        {
+        f.textContent="Most Recent Game: "+two; 
+            f.onclick=()=>{window.open(two,"_blank");
+                          };
+        }
+        else
+        {
+            f.textContent="Most Recent Game: None";
+        }
+         if(three!=null)
+        {
+        g.textContent="Most Recent Game: "+three; 
+            g.onclick=()=>{window.open(three,"_blank");
+                          };
+        }
+        else
+        {
+            g.textContent="Most Recent Game: None";
         }
     }
 </script>
