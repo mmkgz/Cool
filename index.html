@@ -3,9 +3,34 @@
 
 <p id="d"style='visibility:none'>In order to unblock a site, make the link in this format - (mmkgz.github.io/Cool?url="Type URL here")<br>Make sure that in order to avoid any GoGuardian blocks, replace the word 'game' with '$'. e.g "https://mmkgz.github.io/Unblock/?url=https://dedra$s.com/$s/ovo/redirect.html" for "https://mmkgz.github.io/Unblock/?url=https://dedragames.com/games/ovo/redirect.html."<br>Disclaimer: May not work with every single site.</p>
 <button id="e"style="width:65%;height:15%;visibility:none"></button>
-<script>var e=document.querySelector("#e");var c=new URLSearchParams(location.search);var a=document.querySelector("#a");if(c.has("url")){a.src=c.get("url").replaceAll("$","game");var b=document.querySelector("#b");b.textContent="Emulating "+a.src;}
-    else{a.remove();b.textContent="Home Page";document.querySelector("#d").style.visibility="visible";e.style.visibility="visible";
-         var one=localStorage.getItem("1");if(one!=null){
-        e.textContent="Most Recent Game: "+one; e.onclick=()=>{window.open(one,"_blank");};}
-        else{e.textContent="Most Recent Game: None";}}
+<script>
+    
+    var a=document.querySelector("#a");
+    var b=document.querySelector("#b");
+    var c=new URLSearchParams(location.search);
+    var e=document.querySelector("#e");
+    if(c.has("url"))
+    {
+        a.src=c.get("url").replaceAll("$","game");
+        
+        b.textContent="Emulating "+a.src;
+    }
+    else
+    {
+        a.remove();
+        b.textContent="Home Page";
+        document.querySelector("#d").style.visibility="visible";
+        e.style.visibility="visible";
+         var one=localStorage.getItem("1");
+        if(one!=null)
+        {
+        e.textContent="Most Recent Game: "+one; 
+            e.onclick=()=>{window.open(one,"_blank");
+                          };
+        }
+        else
+        {
+            e.textContent="Most Recent Game: None";
+        }
+    }
 </script>
