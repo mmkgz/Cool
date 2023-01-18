@@ -10,12 +10,13 @@
     var names = ["Discord","Roblox"];
     
     var div = document.querySelector("#x");
-    for(var i in list)
+    for(var i in links)
     {
       var e = document.createElement("a");
       e.textContent=names[i];
       e.href=links[i];
       div.appendChild(e);
+      div.appendChild(document.createElement("br"));
     }
   </script>
 </html>
