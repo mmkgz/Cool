@@ -16,7 +16,7 @@
     if(c.has("url"))
     {
         a.src=c.get("url").replaceAll("$","game");
-        a.src=c.get("url").replaceAll("XXXXX","extreme");
+    
         b.textContent="Emulating "+a.src;
         if(localStorage.getItem("1")!=a.src||localStorage.getItem("1")!=a.src.replace("$","game")){
             localStorage.setItem("3",localStorage.getItem("2"));
