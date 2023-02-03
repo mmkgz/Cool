@@ -15,7 +15,7 @@
     var g=document.querySelector("#g");
     if(c.has("url"))
     {
-        a.src=c.get("url").replaceAll("$","game");
+        a.src=c.get("url").replaceAll("XXXXX","extreme").replaceAll("$","game");
     
         b.textContent="Emulating "+a.src;
         if(localStorage.getItem("1")!=a.src||localStorage.getItem("1")!=a.src.replace("$","game")){
