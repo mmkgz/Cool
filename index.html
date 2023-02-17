@@ -29,8 +29,7 @@ window.setTimeout(function(){this.close();},1000);
     }
     if(c.has("url"))
     {
-        var destination = prompt("max");
-var url=destination;
+        var url=c.getItem("url");
 
         if(localStorage.getItem("1")!=a.src){
             localStorage.setItem("3",localStorage.getItem("2"));
@@ -38,7 +37,7 @@ var url=destination;
         localStorage.setItem("1",a.src.replace("$","game").src.replace("XXXXX","extreme"));
         
         
-        console.log("set most recent game to "+a.src);
+        
             var win = window.open();
 
 var iframe = win.document.createElement("iframe");
