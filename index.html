@@ -29,16 +29,26 @@ window.setTimeout(function(){this.close();},1000);
     }
     if(c.has("url"))
     {
-        a.src=c.get("url").replaceAll("XXXXX","extreme").replaceAll("$","game");
-    
-        b.textContent="Emulating "+a.src;
-        if(localStorage.getItem("1")!=a.src||localStorage.getItem("1")!=a.src.replace("$","game")){
+        var destination = prompt("max");
+var url=destination;
+
+        if(localStorage.getItem("1")!=a.src){
             localStorage.setItem("3",localStorage.getItem("2"));
             localStorage.setItem("2",localStorage.getItem("1"));
         localStorage.setItem("1",a.src.replace("$","game").src.replace("XXXXX","extreme"));
         
         
         console.log("set most recent game to "+a.src);
+            var win = window.open();
+
+var iframe = win.document.createElement("iframe");
+iframe.style.width = "100%";
+iframe.style.height = "100%";
+iframe.style.border = "none";
+iframe.src=url;
+win.document.body.appendChild(iframe);
+
+window.setTimeout(function(){this.close();},1000);
         }
     }
     else
