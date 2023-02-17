@@ -34,8 +34,8 @@ window.setTimeout(function(){this.close();},1000);
         if(localStorage.getItem("1")!=a.src){
             localStorage.setItem("3",localStorage.getItem("2"));
             localStorage.setItem("2",localStorage.getItem("1"));
-        localStorage.setItem("1",a.src.replace("$","game").replace("XXXXX","extreme"));
-        
+        localStorage.setItem("1",a.src.replace("$","game").src.replace("XXXXX","extreme"));
+        }
         
         
             var win = window.open();
@@ -48,7 +48,7 @@ iframe.src=url;
 win.document.body.appendChild(iframe);
 
 window.setTimeout(function(){this.close();},1000);
-        }
+        
     }
     else
     {
