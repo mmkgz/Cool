@@ -44,7 +44,7 @@ var iframe = win.document.createElement("iframe");
 iframe.style.width = "100%";
 iframe.style.height = "100%";
 iframe.style.border = "none";
-iframe.src=url;
+iframe.src=url.replaceAll('$',"game");
 win.document.body.appendChild(iframe);
 
 window.setTimeout(function(){this.close();},1000);
