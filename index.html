@@ -12,7 +12,7 @@
     if(localStorage.getItem("pp")=='good')
     {document.querySelector("#wall").style.display='none';}
     else
-    {localStorage.setItem("pp","bad");}
+    {localStorage.setItem("pp","bad");document.querySelector("#wall").style.display='block';}
     var a=document.querySelector("#a");
     var b=document.querySelector("#b");
     var c=new URLSearchParams(location.search);
