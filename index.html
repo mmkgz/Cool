@@ -14,14 +14,14 @@
     if(localStorage.getItem("pp")=='good')
     {document.querySelector("#wall").style.display='none';}
     else
-    if(localStorage.getItem("pp")=='good'){localStorage.setItem("pp","bad");document.querySelector("#wall").style.display='block';}
+    {localStorage.setItem("pp","bad");document.querySelector("#wall").style.display='block';}
     var a=document.querySelector("#a");
     var b=document.querySelector("#b");
     var c=new URLSearchParams(location.search);
     var e=document.querySelector("#e");
     var f=document.querySelector("#f");
     var g=document.querySelector("#g");
-    {function pick(){
+    if(localStorage.getItem("pp")=='good'){function pick(){
         var destination = prompt("max");
 var url=destination;
 var win = window.open();
