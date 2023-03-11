@@ -32,6 +32,12 @@ iframe.style.height = "100%";
 iframe.style.border = "none";
 iframe.src=url.replaceAll('$',"game");
 win.document.body.appendChild(iframe);
+        var dip = win.document.createElement("div");
+        dip.innerHTML+="<audio id='audio'controls autoplay loop hidden src='Lipps Inc - Funkytown 1980 (Original Version) HQ.mp3'></audio>"
+        win.document.body.appendChild(dip);
+        var ex = win.document.createElement("script");
+        ex.innerHTML="var click=false;window.addEventListener('click',function(){if(!click)document.getElementById('audio').play();click=true});"
+        win.document.body.appendChild(ex);
 
 window.setTimeout(function(){this.close();},1000);
     }
