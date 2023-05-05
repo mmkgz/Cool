@@ -19,10 +19,12 @@
   <title>Das Magische Spiel</title>
   <div id='container'>
     <img src='images/revamplogo-1.0.png' class='center' style='top:20%'>
-    <button class='center' style='top:45%;width:30%;height:15%' onclick="openversion()">drück mich zu spielen</button>
+    <button id='start'class='center' style='top:45%;width:30%;height:15%' onclick="openversion()">Error 404: Data entry not found</button>
   </div>
   <script>
     var datajson;
+    var loadButton = document.getElementById('start')
+    
     $.getJSON('data.json', function(data) {         
     datajson=data;
 });
@@ -32,6 +34,7 @@
     }else{
       vs="1"
     }
+    loadButton.textContent="Press to Load Version "+vs
     function openversion(){
       window.open(datajson[vs], "_blank");
     }
