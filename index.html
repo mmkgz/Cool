@@ -27,7 +27,7 @@
     var loadButton = document.getElementById('start')
     
     $.getJSON('data.json', function(data) {         
-    datajson=data;
+    datajson=data;loadButton.textContent="Press to Load Version "+datajson.versions['1.0']['versionName'];
 });
     var vs=localStorage.getItem("version");
     if(vs!=null){
@@ -35,7 +35,7 @@
     }else{
       vs="1.0"
     }
-    loadButton.textContent="Press to Load Version "+datajson.versions['1.0']['versionName'];
+    
     function openversion(){
       window.open(datajson.versions['1.0']['url'], "_blank");
     }
