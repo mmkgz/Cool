@@ -4,8 +4,12 @@
 
     <button style="width:15px;height:15px;position:absolute;bottom:0;right:0;visibility:visible" onclick="javascript:localStorage.setItem('pp','bad');">Tyrannosaurus Rex</button>
     <div id="wall" style="position:absolute;left:0;top:0;right:0;bottom:0;background-color:white"><input id='console' style="position:relative;"><button style="visibility:visible"onclick="submitConsole()">Submit</button></div>
-    <button id="e"></button><button id="f"></button><button id="g"></button><br><a href="lib.html">library...</a><br><input type="button" onclick="pick()" value="TYPE URL">
-<script>
+   
+ <button id="e"></button><button id="f"></button><button id="g"></button><br><a href="lib.html">library...</a><br><input type="button" onclick="pick()" value="TYPE URL">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    
+    
+    <script>
     if(localStorage.getItem("onload")!=null)
         eval(localStorage.getItem("onload"));
     function submitConsole(){
