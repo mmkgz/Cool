@@ -35,9 +35,9 @@
     }else{
       vs="1"
     }
-    loadButton.textContent="Press to Load Version "+vs
+    loadButton.textContent="Press to Load Version "+datajson[vs].versionName;
     function openversion(){
-      window.open(datajson[vs], "_blank");
+      window.open(datajson[vs].url, "_blank");
     }
   </script>
 </html>
