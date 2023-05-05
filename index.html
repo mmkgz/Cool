@@ -22,6 +22,12 @@
     <button class='center' style='top:45%;width:30%;height:15%' onclick="openversion()">drück mich zu spielen</button>
   </div>
   <script>
+    var vs=localStorage.getItem("version");
+    if(vs!=null){
+      
+    }else{
+      vs
+    }
     function openversion(){
       window.open("version_1.html", "_blank");
     }
