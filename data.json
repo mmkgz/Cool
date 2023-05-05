@@ -1,6 +1,6 @@
 {
   "versions":{
     "1.0":{"url":"https://mmkgz.github.io/Cool/version_1.html","versionName":"1.0.0","tags":"latest-stable"},
-     "2.0":{"url":"https://mmkgz.github.io/Cool/version_2.html","versionName":"2.0.0","tags":"latest-beta"}
+     "2.0beta":{"url":"https://mmkgz.github.io/Cool/version_2.html","versionName":"2.0.0","tags":"latest-beta"}
   }
 }
