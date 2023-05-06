@@ -4,7 +4,7 @@
     <h1>Choice of Method</h1>
     <input type="radio" id="frame" name="method" value="frame">
     <label for="frame">Embedded Frame</label>
-    <input type="radio" id="blank" name="method" value="blank">
+    <input type="radio" id="blank" name="method" value="blank" checked='true'>
     <label for="blank">About:Blank</label>
     <br><br>
     <input id='input'type='text'>
@@ -13,8 +13,11 @@
     <button onclick='load()'>Load</button>
   </div>
   <script>
+    var input = document.getElementById('input');
+    const searchParams = new URLSearchParams(location.search);
+    if(searchParams.has('url')input.style.display='none';
     function load(){
-      
+      if(searchParams.has('url')
     }
   </script>
 </html>
