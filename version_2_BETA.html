@@ -14,6 +14,9 @@
         
     </div><iframe id='frameP' style='position:absolute;left:50%;top:50%;width:99%;height:99%;display:none;transform: translateX(-50%) translateY(-50%);'></iframe>
     <script>
+        window.onbeforeunload = function() {
+             return "Are you sure you would like to leave?";
+        }
         var input = document.getElementById('input');
         var frame = true;
         
