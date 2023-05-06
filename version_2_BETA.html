@@ -17,10 +17,11 @@
         window.onbeforeunload = function() {
              return "Are you sure you would like to leave?";
         }
-        document.onkeydown = function (e) {
-  console.log('key down');
-  console.log(e);
-};
+        $('frameP').load(function(){
+            $(document.getElementById('test').contentWindow.document).keydown(function(e){
+               console.log("key pressed!");
+            });
+        });
         var input = document.getElementById('input');
         var frame = true;
         
