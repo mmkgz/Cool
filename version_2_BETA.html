@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <div style="background-color:black;position:absolute;left:0;right:0;top:0;bottom:0;color:white;text-align:center">
+  <div id='dior'style="background-color:black;position:absolute;left:0;right:0;top:0;bottom:0;color:white;text-align:center">
     <h1>Choice of Method</h1>
     <input type="radio" id="frame" name="method" value="frame">
     <label for="frame">Embedded Frame</label>
@@ -11,13 +11,29 @@
     
     <hr>
     <button onclick='load()'>Load</button>
+    <iframe id='frame' style='position:absolute;left:0;right:0;top:0;bottom:0;display:none'>
   </div>
   <script>
     var input = document.getElementById('input');
+    var frame = false;
+    if(document.getElementById('frame').checked)frame=true;
     const searchParams = new URLSearchParams(location.search);
     if(searchParams.has('url')input.style.display='none';
     function load(){
-      if(searchParams.has('url')
+      var url;
+      if(searchParams.has('url'){
+         url=searchParams.get('url');
+      }else{
+        url=input.value;
+      }
+      if(frame){
+        document.getElementById('dior').remove();
+         document.getElementById('frame').src=url;
+        document.getElementById('frame').style.display='block';
+      }else{
+        
+      }
+    
     }
   </script>
 </html>
