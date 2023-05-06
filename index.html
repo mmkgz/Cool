@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <style>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <style>
     #container {
       background-color: purple;
       position: absolute;
@@ -16,15 +32,83 @@
       left: 50%;
       transform: translateX(-50%);
     }
+    .dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
   </style>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <title>Das Magische Spiel</title>
   <div id='container'>
     <img src='images/revamplogo-1.0.png' class='center' style='top:27%;width:30%'>
     <img src='images/2d4e2d928af162e6ab16be006bfd2896.png' class='center' style='top:7%;width:40%'>
     <button id='start' class='center' style='top:45%;width:30%;height:15%' onclick="openversion()">Error 404: Data entry not found</button>
+    
+    <div class="dropdown">
+  <button id='dropdownVersion' class="dropbtn">Dropdown</button>
+  <div class="dropdown-content">
+  <a onclick="select('Link 1')">Link 1</a>
+  <a onclick="select('Link 2')">Link 2</a>
+  <a onclick="select('Link 3')">Link 3</a>
+  </div>
+</div>
+    
+    
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script>
+    
     var datajson;
     var loadButton = document.getElementById('start')
     var vs;
@@ -47,7 +131,9 @@
       
       
     });
-
+    function select(link){
+      document.querySelector("#dropdownVersion").textContent=link;
+    }
     function openversion() {
       if (vs != latestStable || vs != latestBeta) {
         if (vs == latestStable && vs != latestBeta) {
