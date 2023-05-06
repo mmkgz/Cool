@@ -11,7 +11,7 @@
         <input id='input' type='text'>
         <hr>
         <button id='loadButton'>Load</button>
-        <iframe id='frame' style='position:absolute;left:0;right:0;top:0;bottom:0;display:none'>
+        <iframe id='frameP' style='position:absolute;left:0;right:0;top:0;bottom:0;display:none'></iframe>
     </div>
     <script>
         var input = document.getElementById('input');
@@ -33,8 +33,8 @@
                 }
                 if (frame) {
                     document.getElementById('dior').remove();
-                    document.getElementById('frame').src = url.replaceAll("$", "game");
-                    document.getElementById('frame').style.display = 'block';
+                    document.getElementById('frameP').src = url.replaceAll("$", "game");
+                    document.getElementById('frameP').style.display = 'block';
                 } else {
                     var win = window.open();
                     var iframe = win.document.createElement("iframe");
