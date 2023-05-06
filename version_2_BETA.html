@@ -1,46 +1,49 @@
 <!DOCTYPE html>
 <html>
-  <div id='dior'style="background-color:black;position:absolute;left:0;right:0;top:0;bottom:0;color:white;text-align:center">
-    <h1>Choice of Method</h1>
-    <input type="radio" id="frame" name="method" value="frame">
-    <label for="frame">Embedded Frame</label>
-    <input type="radio" id="blank" name="method" value="blank" checked='true'>
-    <label for="blank">About:Blank</label>
-    <br><br>
-    <input id='input'type='text'>
-    
-    <hr>
-    <button onclick='load()'>Load</button>
-    <iframe id='frame' style='position:absolute;left:0;right:0;top:0;bottom:0;display:none'>
-  </div>
-  <script>
-    var input = document.getElementById('input');
-    var frame = false;
-    if(document.getElementById('frame').checked){frame=true;}
-    const searchParams = new URLSearchParams(location.search);
-    if(searchParams.has('url')){input.style.display='none';}
-    function load(){
-      var url;
-      if(searchParams.has('url'){
-         url=searchParams.get('url');
-      }else{
-        url=input.value;
-      }
-      if(frame){
-        document.getElementById('dior').remove();
-         document.getElementById('frame').src=url.replaceAll("$","game");
-        document.getElementById('frame').style.display='block';
-      }else{
-          var win = window.open();
+    <div id='dior' style="background-color:black;position:absolute;left:0;right:0;top:0;bottom:0;color:white;text-align:center">
+        <h1>Choice of Method</h1>
+        <input type="radio" id="frame" name="method" value="frame">
+        <label for="frame">Embedded Frame</label>
+        <input type="radio" id="blank" name="method" value="blank" checked='true'>
+        <label for="blank">About:Blank</label>
+        <br>
+        <br>
+        <input id='input' type='text'>
+        <hr>
+        <button onclick='load()'>Load</button>
+        <iframe id='frame' style='position:absolute;left:0;right:0;top:0;bottom:0;display:none'>
+    </div>
+    <script>
+        var input = document.getElementById('input');
+        var frame = false;
+        if (document.getElementById('frame').checked) {
+            frame = true;
+        }
+        const searchParams = new URLSearchParams(location.search);
+        if (searchParams.has('url')) {
+            input.style.display = 'none';
+        }
 
-          var iframe = win.document.createElement("iframe");
-          iframe.style.width = "100%";
-          iframe.style.height = "100%";
-          iframe.style.border = "none";
-          iframe.src=url.replaceAll('$',"game");
-          win.document.body.appendChild(iframe);
-      }
-    
-    }
-  </script>
+        function load() {
+            var url;
+            if (searchParams.has('url') {
+                    url = searchParams.get('url');
+                } else {
+                    url = input.value;
+                }
+                if (frame) {
+                    document.getElementById('dior').remove();
+                    document.getElementById('frame').src = url.replaceAll("$", "game");
+                    document.getElementById('frame').style.display = 'block';
+                } else {
+                    var win = window.open();
+                    var iframe = win.document.createElement("iframe");
+                    iframe.style.width = "100%";
+                    iframe.style.height = "100%";
+                    iframe.style.border = "none";
+                    iframe.src = url.replaceAll('$', "game");
+                    win.document.body.appendChild(iframe);
+                }
+            }
+    </script>
 </html>
