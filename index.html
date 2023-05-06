@@ -107,9 +107,7 @@
       <div class="dropdown" style='height:100%;width:30%'>
   <button id='dropdownVersion' class="dropbtn" style='height:100%;width:100%'>Dropdown</button>
   <div class="dropdown-content" id='maindropdown'>
-  <a onclick="select('Link 1')">Link 1</a>
-  <a onclick="select('Link 2')">Link 2</a>
-  <a onclick="select('Link 3')">Link 3</a>
+  
   </div>
 </div>
     </div>
@@ -145,10 +143,10 @@
       var dropdown = document.getElementById("maindropdown");
       for (var i of verse) {
         
-        dropdown.innerHTML+="<a onclick='select('"+datajson.versions[i]['versionName']+"')'>"+datajson.versions[i]['versionName']+"</a>";
+        dropdown.innerHTML+="<a onclick='select(\""+datajson.versions[i]['versionName']+"\")'>"+datajson.versions[i]['versionName']+"</a>";
         
       }
-      loadButton.textContent = "Press to Load Version " + datajson.versions[vs]['versionName'];
+      loadButton.textContent = "Press to Load Version:";
       
       
     });
