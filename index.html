@@ -107,7 +107,7 @@
     border-bottom-left-radius: 10%;' onclick="openversion()">Error 404: Data entry not found</button>
       <div class="dropdown" style='height:100%;width:30%'>
   <button id='dropdownVersion' class="dropbtn" style='height:100%;width:100%;border-top-right-radius: 10%;
-    border-bottom-right-radius: 10%;'>Dropdown</button>
+    border-bottom-right-radius: 10%;'>if ur reading this, call the frickin police god dam it</button>
   <div class="dropdown-content" id='maindropdown'>
   
   </div>
@@ -150,7 +150,7 @@
       }
       loadButton.textContent = "Press to Load Version:";
       
-      
+      document.getElementById("dropdownVersion").textContent=datajson.versions[vs]['versionName']
     });
     function select(display){
       document.querySelector("#dropdownVersion").textContent=display;
