@@ -106,7 +106,7 @@
     <button id='start' class='centerW' style='position:relative;left:0;top:0;width:70%;height:100%' onclick="openversion()">Error 404: Data entry not found</button>
       <div class="dropdown" style='height:100%;width:30%'>
   <button id='dropdownVersion' class="dropbtn" style='height:100%;width:100%'>Dropdown</button>
-  <div class="dropdown-content">
+  <div class="dropdown-content" id='maindropdown'>
   <a onclick="select('Link 1')">Link 1</a>
   <a onclick="select('Link 2')">Link 2</a>
   <a onclick="select('Link 3')">Link 3</a>
@@ -131,6 +131,8 @@
       datajson = data;
       var verse = Object.keys(datajson.versions);
       for (var i of verse) {
+        var a = document.createElement('a');
+        a.onclick="select('"+i+"')";
         var tag = datajson.versions[i]['tags'];
         if (tag == 'latest-stable') latestStable = i;
         if (tag == 'latest-beta') latestBeta = i;
@@ -140,12 +142,19 @@
         vs = latestStable;
         localStorage.setItem("version", vs);
       }
+      var dropdown = document.getElementById("maindropdown");
+      for (var i of verse) {
+        var a = document.createElement('a');
+        a.onclick="select('"+datajson.versions[i]['versionName']+"')";
+        dropdown.appendChild(a);
+      }
       loadButton.textContent = "Press to Load Version " + datajson.versions[vs]['versionName'];
       
       
     });
-    function select(link){
-      document.querySelector("#dropdownVersion").textContent=link;
+    function select(display){
+      document.querySelector("#dropdownVersion").textContent=display;
+      
     }
     function openversion() {
       if (vs != latestStable || vs != latestBeta) {
