@@ -30,12 +30,7 @@
     
      var vs,justchanged;
     var latestStable,latestBeta;
-var verse=Object.keys(datajson.versions);
-for (var i of verse) {
-   var tag = datajson.versions[i]['tags'];
-    if(tag=='latest-stable')latestStable=i;
-    if(tag=='latest-beta')latestBeta=i;
-}
+
     
     
     
@@ -44,8 +39,13 @@ for (var i of verse) {
     vs=localStorage.getItem("version");
    justchanged=false;
       
-      
-      
+       datajson=data;loadButton.textContent="Press to Load Version "+datajson.versions[vs]['versionName'];
+      var verse=Object.keys(datajson.versions);
+for (var i of verse) {
+   var tag = datajson.versions[i]['tags'];
+    if(tag=='latest-stable')latestStable=i;
+    if(tag=='latest-beta')latestBeta=i;
+}
       
       
     if(vs==null){
@@ -54,7 +54,7 @@ for (var i of verse) {
       localStorage.setItem("version",vs);
       justchanged=true;
     }
-    datajson=data;loadButton.textContent="Press to Load Version "+datajson.versions[vs]['versionName'];
+   
     if(!justchanged&&(vs!=latestStable||vs!=latestBeta)){
       if(vs==latestStable&&vs!=latestBeta){
         var update = confirm("Would you like to try out the new Beta Update? (will probably contain many bugs and glitches)");
