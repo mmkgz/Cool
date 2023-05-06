@@ -24,7 +24,7 @@
 
         function loadGame() {
             var url;
-            if (document.getElementById('frame').checked) {
+            if (!document.getElementById('frame').checked) {
             frame = false;
         }
             if (searchParams.has('url')) {
