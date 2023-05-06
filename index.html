@@ -28,7 +28,7 @@
     var loadButton = document.getElementById('start')
     
     
-     var vs,justchanged;
+     var vs;
     var latestStable,latestBeta;
 
     
@@ -37,7 +37,7 @@
     $.getJSON('data.json', function(data) {         
    
     vs=localStorage.getItem("version");
-   justchanged=false;
+   
       
        datajson=data;loadButton.textContent="Press to Load Version "+datajson.versions[vs]['versionName'];
       var verse=Object.keys(datajson.versions);
@@ -52,30 +52,39 @@ for (var i of verse) {
       
       vs = latestStable;
       localStorage.setItem("version",vs);
-      justchanged=true;
+      
     }
    
-    if(!justchanged&&(vs!=latestStable||vs!=latestBeta)){
+    
+    }
+});
+   
+    function openversion(){
+      
+      
+      
+      
+      if(!justchanged&&(vs!=latestStable||vs!=latestBeta)){
       if(vs==latestStable&&vs!=latestBeta){
         var update = confirm("Would you like to try out the new Beta Update? (will probably contain many bugs and glitches)");
         if(update){
           vs = latestBeta;
           localStorage.setItem("version",vs);
-        }
+        }else window.open(datajson.versions[vs]['url'], "_blank");
       }
        if(vs!=latestStable&&vs!=latestBeta){
         var update = confirm("Would you like to update to the newest version?");
         if(update){
           vs = latestStable;
           localStorage.setItem("version",vs);
-        }
+        }else window.open(datajson.versions[vs]['url'], "_blank");
       }
-    }
-});
-   
-    function openversion(){
       
-      window.open(datajson.versions[vs]['url'], "_blank");
+      
+      
+        
+      
+      
     }
   </script>
 </html>
