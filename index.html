@@ -47,7 +47,7 @@
     });
 
     function openversion() {
-      if (!justchanged && (vs != latestStable || vs != latestBeta)) {
+      if (vs != latestStable || vs != latestBeta) {
         if (vs == latestStable && vs != latestBeta) {
           var update = confirm("Would you like to try out the new Beta Update? (will probably contain many bugs and glitches)");
           if (update) {
