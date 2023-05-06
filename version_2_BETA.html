@@ -2,9 +2,9 @@
 <html>
     <div id='dior' style="background-color:black;position:absolute;left:0;right:0;top:0;bottom:0;color:white;text-align:center">
         <h1>Choice of Method</h1>
-        <input type="radio" id="frame" name="method" value="frame">
+        <input type="radio" id="frame" name="method" value="frame" checked='true'>
         <label for="frame">Embedded Frame</label>
-        <input type="radio" id="blank" name="method" value="blank" checked='true'>
+        <input type="radio" id="blank" name="method" value="blank">
         <label for="blank">About:Blank</label>
         <br>
         <br>
@@ -15,10 +15,8 @@
     </div>
     <script>
         var input = document.getElementById('input');
-        var frame = false;
-        if (document.getElementById('frame').checked) {
-            frame = true;
-        }
+        var frame = true;
+        
         const searchParams = new URLSearchParams(location.search);
         if (searchParams.has('url')) {
             input.style.display = 'none';
@@ -26,6 +24,9 @@
 
         function loadGame() {
             var url;
+            if (document.getElementById('frame').checked) {
+            frame = false;
+        }
             if (searchParams.has('url')) {
                     url = searchParams.get('url');
                 } else {
