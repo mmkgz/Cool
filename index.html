@@ -131,8 +131,6 @@
       datajson = data;
       var verse = Object.keys(datajson.versions);
       for (var i of verse) {
-        var a = document.createElement('a');
-        a.onclick="select('"+i+"')";
         var tag = datajson.versions[i]['tags'];
         if (tag == 'latest-stable') latestStable = i;
         if (tag == 'latest-beta') latestBeta = i;
@@ -154,7 +152,13 @@
     });
     function select(display){
       document.querySelector("#dropdownVersion").textContent=display;
-      
+      var valtak;
+      var verse = Object.keys(datajson.versions);
+      for (var i of verse) {
+        if(datajson.versions[i]['versionName']==display)valtak=i;
+      }
+      vs=valtak;
+      localStorage.setItem("version",valtak);
     }
     function openversion() {
       if (vs != latestStable || vs != latestBeta) {
