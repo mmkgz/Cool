@@ -28,10 +28,17 @@
       }
       if(frame){
         document.getElementById('dior').remove();
-         document.getElementById('frame').src=url;
+         document.getElementById('frame').src=url.replaceAll("$","game");
         document.getElementById('frame').style.display='block';
       }else{
-        
+          var win = window.open();
+
+          var iframe = win.document.createElement("iframe");
+          iframe.style.width = "100%";
+          iframe.style.height = "100%";
+          iframe.style.border = "none";
+          iframe.src=url.replaceAll('$',"game");
+          win.document.body.appendChild(iframe);
       }
     
     }
