@@ -144,9 +144,9 @@
       }
       var dropdown = document.getElementById("maindropdown");
       for (var i of verse) {
-        var a = document.createElement('a');
-        a.onclick="select('"+datajson.versions[i]['versionName']+"')";
-        dropdown.appendChild(a);
+        
+        dropdown.innerHTML+="<a onclick='select('"+datajson.versions[i]['versionName']+"')'>"+datajson.versions[i]['versionName']+"</a>";
+        
       }
       loadButton.textContent = "Press to Load Version " + datajson.versions[vs]['versionName'];
       
