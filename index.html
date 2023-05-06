@@ -32,7 +32,6 @@
     $.getJSON('data.json', function(data) {
       vs = localStorage.getItem("version");
       datajson = data;
-      loadButton.textContent = "Press to Load Version " + datajson.versions[vs]['versionName'];
       var verse = Object.keys(datajson.versions);
       for (var i of verse) {
         var tag = datajson.versions[i]['tags'];
@@ -44,6 +43,9 @@
         vs = latestStable;
         localStorage.setItem("version", vs);
       }
+      loadButton.textContent = "Press to Load Version " + datajson.versions[vs]['versionName'];
+      
+      
     });
 
     function openversion() {
