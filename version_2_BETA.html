@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <div id='dior' style="background-color:black;position:absolute;left:0;right:0;top:0;bottom:0;color:white;text-align:center">
+        
         <h1>Choice of Method</h1>
         <input type="radio" id="frame" name="method" value="frame" checked='true'>
         <label for="frame">Embedded Frame</label>
@@ -25,6 +26,7 @@
         }
 
         function loadGame() {
+            if(localStorage.getItem('pp')!='good')return;
             var url;
             if (!document.getElementById('frame').checked) {
             frame = false;
