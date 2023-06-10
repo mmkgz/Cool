@@ -47,7 +47,7 @@
                 iframe.controls=true;
              
                     var src = win.document.createElement("source");
-                src.src=url.substring(url.indexOf(':')+1).replaceAll('$', "game");
+                src.src="https://mmkgz.github.io/Cool/"+url.substring(url.indexOf(':')+1).replaceAll('$', "game");
                 src.type="video/mp4";
                     iframe.appendChild(src);
                     win.document.body.appendChild(iframe);
