@@ -36,6 +36,23 @@
                 } else {
                     url = input.value;
                 }
+            if(url.startsWith("video:")){
+                var win = window.open();
+                
+                    var iframe = win.document.createElement("video");
+                    iframe.width = "400px";
+              iframe.style.position="absolute";
+                iframe.style.left="50%";
+                iframe.style.transform="translateX(-50%)";
+                iframe.controls=true;
+             
+                    var src = win.document.createElement("source");
+                src.src=url.substring(url.indexOf(':')+1).replaceAll('$', "game");
+                src.type="video/mp4";
+                    iframe.appendChild(src);
+                    win.document.body.appendChild(iframe);
+                return;
+            }
                 if (frame) {
                     document.getElementById('dior').remove();
                     document.getElementById('frameP').src = url.replaceAll("$", "game");
